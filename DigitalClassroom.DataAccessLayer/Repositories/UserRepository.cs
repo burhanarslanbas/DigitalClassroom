@@ -16,5 +16,51 @@ namespace DigitalClassroom.DataAccessLayer.Repositories
         {
             _context = context;
         }
+
+        public User AuthenticateUser(string email, string password)
+        {
+            return _context.Set<User>()
+                .Include(u => u.Role)
+                .Include(u => u.Institution)
+                .Include(u => u.MailVerifications)
+                .Include(u => u.StudentSubmissions)
+                .Include(u => u.Announcements)
+                .Include(u => u.Enrollments)
+                .Include(u => u.FileAssociations)
+                .Include(u => u.Files)
+                .FirstOrDefault(x => x.Email == email && x.Password == password);
+        }
+
+        public IEnumerable<User> GetTeachersByInstitutionId(int? institutionId)
+        {
+            // InstitutionId'si eşleşen aktif öğretmenleri getir
+            // Eğer institutionId null ise tüm öğretmenleri getir
+            if (institutionId == null)
+            {
+                return _context.Set<User>()
+                    .Include(u => u.Role)
+                    .Include(u => u.Institution)
+                    .Include(u => u.MailVerifications)
+                    .Include(u => u.StudentSubmissions)
+                    .Include(u => u.Announcements)
+                    .Include(u => u.Enrollments)
+                    .Include(u => u.FileAssociations)
+                    .Include(u => u.Files)
+                    .Where(x => x.RoleId == (int)Role.RoleNames.Teacher && x.IsActive == true).ToList();
+            }
+            else
+            {
+                return _context.Set<User>()
+                    .Include(u => u.Role)
+                    .Include(u => u.Institution)
+                    .Include(u => u.MailVerifications)
+                    .Include(u => u.StudentSubmissions)
+                    .Include(u => u.Announcements)
+                    .Include(u => u.Enrollments)
+                    .Include(u => u.FileAssociations)
+                    .Include(u => u.Files)
+                    .Where(x => x.RoleId == (int)Role.RoleNames.Teacher && x.InstitutionId == institutionId && x.IsActive == true).ToList();
+            }
+        }
     }
 }

@@ -12,7 +12,6 @@ namespace DigitalClassroom.DataAccessLayer.Contexts
     {
         public AppDbContext() : base("name=DigitalClassroomConnection")
         {
-
         }
 
         // DbSet sınıfları, veritabanında oluşturulacak tabloları temsil eder.

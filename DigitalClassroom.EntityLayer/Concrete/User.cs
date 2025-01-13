@@ -9,6 +9,15 @@ namespace DigitalClassroom.EntityLayer.Concrete
 {
     public class User
     {
+        public User()
+        {
+            MailVerifications = new List<MailVerification>();
+            StudentSubmissions = new List<StudentSubmission>();
+            Announcements = new List<Announcement>();
+            Enrollments = new List<Enrollment>();
+            FileAssociations = new List<FileAssociation>();
+            Files = new List<File>();
+        }
         public int Id { get; set; } // Kullanıcı Id'si
         public int RoleId { get; set; } // Öğrenci, Öğretmen, Kurum Yöneticisi veya Admin
         public int? InstitutionId { get; set; } // Kurum Id'si, Eğer bu alan boş ise öğretmen herhangi bir kuruma bağlı değildir. - opsiyonel
@@ -32,6 +41,7 @@ namespace DigitalClassroom.EntityLayer.Concrete
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ICollection<FileAssociation> FileAssociations { get; set; }
         public virtual ICollection<File> Files { get; set; }
+
         // Navigation Property için tanımlama yaparken "virtual" keyword'ünü kullanırsak; Entity Framework, bu property'nin değerini veritabanından çekerken otomatik olarak yükler.
         // Bu sayede veritabanından çekilen verilerin daha performanslı bir şekilde yüklenmesi sağlanır. Bu işlem "Lazy Loading" olarak adlandırılır.
     }

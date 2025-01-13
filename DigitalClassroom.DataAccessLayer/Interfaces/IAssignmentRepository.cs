@@ -9,5 +9,6 @@ namespace DigitalClassroom.DataAccessLayer.Interfaces
 {
     public interface IAssignmentRepository : IGenericRepository<Assignment>
     {
+        void DeleteAssignmentAndStudentSubmissions(int assignmentId);
     }
 }

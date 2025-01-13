@@ -16,5 +16,21 @@ namespace DigitalClassroom.DataAccessLayer.Repositories
         {
             _context = context;
         }
+
+        public void DeleteAssignmentAndStudentSubmissions(int assignmentId)
+        {
+            // Önce öğrenci gönderimlerini sil
+            var submissions = _context.Set<StudentSubmission>().Where(s => s.AssignmentId == assignmentId);
+            if (submissions.Count() > 0)
+                _context.Set<StudentSubmission>().RemoveRange(submissions);
+
+            // Sonra görevi sil
+            var assignment = _context.Set<Assignment>().Find(assignmentId);
+            if (assignment != null)
+            {
+                _context.Set<Assignment>().Remove(assignment);
+            }
+            _context.SaveChanges();
+        }
     }
 }

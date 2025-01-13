@@ -52,14 +52,17 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
 
             Property(x => x.CreatedAt)
                 .HasColumnName("CreatedAt")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             Property(x => x.UpdatedAt)
                 .HasColumnName("UpdatedAt")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             Property(x => x.DeletedAt)
                 .HasColumnName("DeletedAt")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             // İlişki Tanımlamaları

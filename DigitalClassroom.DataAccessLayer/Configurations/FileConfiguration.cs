@@ -49,6 +49,7 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
 
             Property(x => x.UploadedAt)
                 .HasColumnName("UploadedAt")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             Property(x => x.Metadata)

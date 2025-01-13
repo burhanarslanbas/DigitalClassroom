@@ -5,6 +5,13 @@ namespace DigitalClassroom.EntityLayer.Concrete
 {
     public class Course
     {
+        public Course()
+        {
+            Enrollments = new List<Enrollment>();
+            Announcements = new List<Announcement>();
+            FileAssociations = new List<FileAssociation>();
+        }
+
         public int Id { get; set; } // Dersin Id'si
         public int TeacherId { get; set; } // Öğretmenin Id'si
         public int CreatorId { get; set; } // Oluşturan kişinin Id'si

@@ -42,14 +42,18 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
 
             Property(x => x.EnrollmentDate)
                 .HasColumnName("EnrollmentDate")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             Property(x => x.DeactivetedDate)
-                .HasColumnName("DeactivetedDate");
+                .HasColumnName("DeactivetedDate")
+                .HasColumnType("datetime2")
+                .IsOptional();
 
             Property(x => x.DeactivetedReason)
                 .HasColumnName("DeactivetedReason")
-                .HasMaxLength(500);
+                .HasMaxLength(500)
+                .IsOptional();
 
             // İlişki Tanımlamaları
 

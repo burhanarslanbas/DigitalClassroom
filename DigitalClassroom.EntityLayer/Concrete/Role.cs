@@ -11,5 +11,12 @@ namespace DigitalClassroom.EntityLayer.Concrete
 
         // Navigation Property
         public virtual ICollection<User> Users { get; set; } // Bir rolün birden fazla kullanıcısı olabilir
+        public enum RoleNames
+        {
+            Admin = 1,
+            Manager,
+            Teacher,
+            Student
+        }
     }
 }

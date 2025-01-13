@@ -15,8 +15,8 @@ namespace DigitalClassroom.EntityLayer.Concrete
         public string Email { get; set; } // Kurum E-Posta Adresi
         public bool IsActive { get; set; } // Kurumun aktif olup olmadığı
         public DateTime CreatedAt { get; set; } // Kurumun oluşturulma tarihi
-        public DateTime UpdatedAt { get; set; } // Güncellenme Tarihi
-        public DateTime DeactivetedDate { get; set; } // Pasif hale getirilme tarihi
+        public DateTime? UpdatedAt { get; set; } // Güncellenme Tarihi
+        public DateTime? DeactivetedDate { get; set; } // Pasif hale getirilme tarihi
         public string DeactivetedReason { get; set; } // Pasif hale getirilme sebebi
 
         // Navigation Properties

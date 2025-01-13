@@ -9,6 +9,7 @@ namespace DigitalClassroom.EntityLayer.Concrete
         public Assignment()
         {
             FileAssociations = new List<FileAssociation>();
+            StudentSubmissions = new List<StudentSubmission>();
         }
         public int Id { get; set; } // Ödev Id'si
         public int CourseId { get; set; } // Ders Id'si

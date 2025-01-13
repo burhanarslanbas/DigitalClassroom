@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Http.Headers;
@@ -64,10 +66,8 @@ namespace DigitalClassroom.DataAccessLayer.Repositories
 
         public void Update(T entity)
         {
-            // Varlığı bağlamda izlenir hale getir
-            _dbSet.Attach(entity);
-            // Varlığın durumunu değiştir
-            _context.Entry(entity).State = EntityState.Modified;
+            // Veritabanında ilgili varlığı güncelle
+            _dbSet.AddOrUpdate(entity);
             // Değişiklikleri veritabanına uygula
             _context.SaveChanges();
         }

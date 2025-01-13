@@ -62,14 +62,17 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
 
             Property(x => x.CreatedAt)
                 .HasColumnName("CreatedAt")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             Property(x => x.UpdatedAt)
                 .HasColumnName("UpdatedAt")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             Property(x => x.DeactivetedDate)
                 .HasColumnName("DeactivetedDate")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             Property(x => x.DeactivetedReason)
@@ -77,7 +80,8 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
                 .IsOptional();
 
             // İlişki Tanımlamaları
-
+            
+            // Bu ilişki Role Tablosunda tanımlandı.
             //// Role tablosundaki Id ile User tablosundaki RoleId arasında bire - çok ilişki
             //HasRequired(x => x.Role)
             //    .WithMany(x=>x.Users)

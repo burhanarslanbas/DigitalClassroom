@@ -50,19 +50,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IAnnouncementService.cs" />
+    <Compile Include="Interfaces\IAssignmentService.cs" />
+    <Compile Include="Interfaces\ICourseService.cs" />
+    <Compile Include="Interfaces\IEnrollmentService.cs" />
+    <Compile Include="Interfaces\IFileAssociationService.cs" />
+    <Compile Include="Interfaces\IFileService.cs" />
+    <Compile Include="Interfaces\IGenericService.cs" />
+    <Compile Include="Interfaces\IInstitutionService.cs" />
+    <Compile Include="Interfaces\IMailVerificationService.cs" />
+    <Compile Include="Interfaces\IRoleService.cs" />
+    <Compile Include="Interfaces\IStudentSubmissionService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Managers\AnnouncementManager.cs" />
+    <Compile Include="Managers\AssignmentManager.cs" />
+    <Compile Include="Managers\CourseManager.cs" />
+    <Compile Include="Managers\EnrollmentManager.cs" />
+    <Compile Include="Managers\FileAssociationManager.cs" />
+    <Compile Include="Managers\FileManager.cs" />
+    <Compile Include="Managers\InstitutionManager.cs" />
+    <Compile Include="Managers\MailVerificationManager.cs" />
+    <Compile Include="Managers\RoleManager.cs" />
+    <Compile Include="Managers\StudentSubmissionManager.cs" />
+    <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\Announcements\CreateAnnouncementValidator.cs" />
+    <Compile Include="Validations\Assignments\CreateAssignmentValidator.cs" />
+    <Compile Include="Validations\Courses\CreateCourseValidator.cs" />
+    <Compile Include="Validations\Institutions\CreateInstitutionValidator.cs" />
+    <Compile Include="Validations\Login\LoginValidator.cs" />
+    <Compile Include="Validations\Register\RegisterValidator.cs" />
+    <Compile Include="Validations\StudentSubmissions\CreateSubmissionValidator.cs" />
+    <Compile Include="Validations\Users\CreateUserValidator.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factories\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
-    <Folder Include="Validations\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Utilities\not.txt" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalClassroom.DataAccessLayer\DigitalClassroom.DataAccessLayer.csproj">
+      <Project>{ed50b02c-243e-4d67-bbe2-39d17832c72b}</Project>
+      <Name>DigitalClassroom.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalClassroom.EntityLayer\DigitalClassroom.EntityLayer.csproj">
+      <Project>{0CA49AAF-1AA1-406B-BDB6-7CC1C79EBCCC}</Project>
+      <Name>DigitalClassroom.EntityLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

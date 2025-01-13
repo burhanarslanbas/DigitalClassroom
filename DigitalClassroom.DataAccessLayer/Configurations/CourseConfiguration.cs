@@ -63,10 +63,12 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
 
             Property(x => x.CreatedAt)
                 .HasColumnName("CreatedAt")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             Property(x => x.DeactivetedDate)
                 .HasColumnName("DeactivetedDate")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             Property(x => x.DeactivetedReason)

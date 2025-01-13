@@ -42,10 +42,12 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
 
             Property(x => x.DueDate)
                 .HasColumnName("DueDate")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             Property(x => x.CreatedDate)
                 .HasColumnName("CreatedDate")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             // İlişki Tanımlamaları

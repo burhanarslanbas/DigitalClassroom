@@ -91,6 +91,19 @@
     <Compile Include="Migrations\202412181135196_Role-User-Relation.designer.cs">
       <DependentUpon>202412181135196_Role-User-Relation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412282002014_Institution-ContactNumberLength-Update.cs" />
+    <Compile Include="Migrations\202412282002014_Institution-ContactNumberLength-Update.Designer.cs">
+      <DependentUpon>202412282002014_Institution-ContactNumberLength-Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412302117153_ColumnTypeUpdate-datetime2.cs" />
+    <Compile Include="Migrations\202412302117153_ColumnTypeUpdate-datetime2.Designer.cs">
+      <DependentUpon>202412302117153_ColumnTypeUpdate-datetime2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\MailVerificationRepository.cs" />
     <Compile Include="Migrations\202412171723149_Create-DB.cs" />
     <Compile Include="Migrations\202412171723149_Create-DB.designer.cs">
@@ -119,6 +132,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202412171723149_Create-DB.resx">
@@ -135,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412181135196_Role-User-Relation.resx">
       <DependentUpon>202412181135196_Role-User-Relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412282002014_Institution-ContactNumberLength-Update.resx">
+      <DependentUpon>202412282002014_Institution-ContactNumberLength-Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412302117153_ColumnTypeUpdate-datetime2.resx">
+      <DependentUpon>202412302117153_ColumnTypeUpdate-datetime2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

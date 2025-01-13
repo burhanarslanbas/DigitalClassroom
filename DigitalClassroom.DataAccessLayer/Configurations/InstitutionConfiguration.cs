@@ -30,7 +30,7 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
                 .IsRequired();
 
             Property(x => x.Name)
-                .HasColumnName("Name").HasMaxLength(50)
+                .HasColumnName("Name").HasMaxLength(100)
                 .IsRequired();
 
             Property(x => x.Address)
@@ -40,12 +40,12 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
 
             Property(x => x.ContactNumber)
                 .HasColumnName("ContactNumber")
-                .HasMaxLength(15)
+                .HasMaxLength(50)
                 .IsRequired();
 
             Property(x => x.Email)
                 .HasColumnName("Email")
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsRequired();
 
             Property(x => x.IsActive)
@@ -55,10 +55,12 @@ namespace DigitalClassroom.DataAccessLayer.Configurations
 
             Property(x => x.CreatedAt)
                 .HasColumnName("CreatedAt")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             Property(x => x.UpdatedAt)
                 .HasColumnName("UpdatedAt")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             Property(x => x.DeactivetedDate)

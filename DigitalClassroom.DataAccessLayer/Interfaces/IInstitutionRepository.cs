@@ -9,5 +9,8 @@ namespace DigitalClassroom.DataAccessLayer.Interfaces
 {
     public interface IInstitutionRepository : IGenericRepository<Institution>
     {
+        void UpdateManagerId(int institutionId, int id);
+        void DeactivateInstitutionAndUsers(int institutionId,string deactivatedReason);
+        void ActivateInstitutionAndUsers(int institutionId);
     }
 }

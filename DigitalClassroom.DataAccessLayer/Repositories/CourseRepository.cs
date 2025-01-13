@@ -22,7 +22,7 @@ namespace DigitalClassroom.DataAccessLayer.Repositories
         public IEnumerable<Course> GetCoursesByTeacherId(int teacherId)
         {
             // TeacherId si verilen öğretmenin verdiği derslerin listesini getir
-            return _context.Set<Course>().Where(c => c.TeacherId == teacherId).ToList();
+            return _context.Set<Course>().Where(c => c.TeacherId == teacherId && c.IsActive == true).ToList();
         }
     }
 }
